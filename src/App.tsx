@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { API, Difficulty, QuestionState } from "./API";
 import QuestionCard from "./components/QuestionCard";
-import { GlobalStyle,Wrapper } from "./App.styles";
+import { GlobalStyle, Wrapper } from "./App.styles";
 
 export type AnswerObject = {
   question: string;
@@ -63,7 +63,7 @@ const App = () => {
         <h1>Computer Science Quiz</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startQuiz}>
-            Start
+            {userAnswers.length === TOTAL_QUESTIONS ? "Restart" : "Start"}
           </button>
         ) : null}
         {!gameOver ? <p className="score">Score: {score}</p> : null}
